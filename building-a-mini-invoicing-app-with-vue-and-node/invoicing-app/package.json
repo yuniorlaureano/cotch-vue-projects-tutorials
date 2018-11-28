@@ -1,0 +1,21 @@
+{
+  "name": "invoicing-app",
+  "version": "1.0.0",
+  "description": "a project for invoicing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yuniorlaureano@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.2",
+    "bluebird": "^3.5.3",
+    "body-parse": "^0.1.0",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "path": "^0.12.7",
+    "sqlite3": "^4.0.4",
+    "umzug": "^2.2.0"
+  }
+}
