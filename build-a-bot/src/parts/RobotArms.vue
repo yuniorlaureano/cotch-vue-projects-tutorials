@@ -11,12 +11,10 @@
 </template>
 
 <script>
-import parts from '../data/parts';
+import getPartsMixin from './get-parts-mixin';
 
 export default {
   name: 'RobotArms',
-  data(){
-    return {arms: parts.arms}
-  }
+  mixins: [getPartsMixin]
 };
 </script>

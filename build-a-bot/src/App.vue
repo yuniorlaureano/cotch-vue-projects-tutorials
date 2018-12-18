@@ -9,10 +9,18 @@
             Build-a-Bot
           </router-link>
           </li>
-           <li class="nav-item">
+           <li class="nav-item cart">
             <router-link to="/build" exact>
             Build
           </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/cart" exact>
+            Cart
+          </router-link>    
+          <div class="cart-items">
+            {{cart.length}}
+          </div>      
           </li>
         </ul>
       </nav>
@@ -29,9 +37,21 @@
 </template>
 
 <script>
+import {mapState, mapGetters} from 'vuex';
 
 export default {
-  name: 'app'
+  name: 'app',
+  computed:{
+    ...mapState({
+      rootFoo: 'foo',
+      robotFoo: state => state.robots.foo
+    }),
+    ...mapGetters({rootGetterFoo: 'foo'}),
+    ...mapGetters('robots', {robotsGettersFoo: 'foo'}),
+    cart: function(){
+      return this.$store.state.robots.cart;
+    }
+  }
 };
 </script>
 
@@ -76,10 +96,26 @@ ul {
   margin: 10px auto 0 auto;
   justify-content: center;
 }
+.nav-item.cart{
+  position: relative;
+  margin-left: auto;
+  border-right: none;
+}
 .aside{
   padding: 30px;
   background-color: gray;
   width: 100px;
   min-height: 300px;
+}
+.cart-items{
+  position: absolute;
+  top: 13px;
+  right: 350px;
+  font-size: 18px;
+  width: 20px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 100px;
+  background-color: mediumseagreen;
 }
 </style>
