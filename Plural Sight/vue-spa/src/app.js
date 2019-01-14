@@ -1,12 +1,11 @@
 import Vue from 'vue';
 import AppLayout from './theme/Layout.vue';
+import router from './router';
 
 const app = new Vue({
-    data: {
-        hello: "Hellow12"
-    },
-    render: h => h(AppLayout)
-    //template: '<App/>'
+    render: h => h(AppLayout),
+    router: router
+    //template: '<AppLayout/>'
 });
 
-export { app };
+export { app, router };
