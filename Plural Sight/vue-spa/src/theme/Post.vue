@@ -1,10 +1,8 @@
 <template>
     <div class="card">
         <div class="card-content">
-            <h3>{{post.title}}</h3>
             <slot name="title"></slot>
-            <slot name="content"></slot>
-            {{post.content}}
+            <slot name="content"></slot>            
         </div>
         <footer class="card-footer">
             <a class="card-footer-item" :href="post.link" target="_link">Read More</a>
